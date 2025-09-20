@@ -1,0 +1,75 @@
+# ===================================================================
+# General
+# ===================================================================
+
+# Dependency directories
+# Catches node_modules in backend/, frontend/, or any other folder
+**/node_modules/
+
+# Environment variables
+# Never commit secrets, API keys, etc.
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.*
+
+# But do commit the example file
+!/.env.example
+
+
+# ===================================================================
+# Build files & Artifacts
+# ===================================================================
+
+# General build output folders
+/build/
+/dist/
+
+# Frontend framework specific build outputs
+/.next/
+/.svelte-kit/
+/.output/
+/out/
+
+# Package lock files for different package managers
+# Keep the one for your project, comment out or delete others
+# package-lock.json # Kept for npm
+# yarn.lock # Uncomment if using Yarn
+# pnpm-lock.yaml # Uncomment if using pnpm
+
+
+# ===================================================================
+# Logs and Reports
+# ===================================================================
+
+# Log files
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Test reports
+/coverage/
+/.nyc_output/
+
+
+# ===================================================================
+# System & Editor Files
+# ===================================================================
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# IDE and editor directories
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
