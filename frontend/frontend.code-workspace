@@ -1,0 +1,21 @@
+{
+	"folders": [
+		{
+			"name": "frontend",
+			"path": "."
+		},
+		{
+			"name": "src",
+			"path": "../../jharkhandtourism/frontend/src"
+		},
+		{
+			"name": "public",
+			"path": "../../jharkhandtourism/frontend/public"
+		},
+		{
+			"name": "node_modules",
+			"path": "../../jharkhandtourism/frontend/node_modules"
+		}
+	],
+	"settings": {}
+}

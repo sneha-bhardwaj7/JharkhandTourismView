@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, ArrowUp } from 'lucide-react';
 import galleryBg from '../assets/gallery-bg.jpg'; 
-import galleryImg1 from '../assets/gallery-1.png'; 
+import galleryImg1 from '../assets/destination2.jpg'; 
 import galleryImg2 from '../assets/gallery-2.jpg'; 
-import galleryImg3 from '../assets/gallery-1.png'; 
-import galleryImg4 from '../assets/gallery-1.png'; 
-import galleryImg5 from '../assets/gallery-1.png'; 
+import galleryImg3 from '../assets/destination7.jpg'; 
+import galleryImg4 from '../assets/destination5.jpg'; 
+import galleryImg5 from '../assets/destination3.jpg'; 
 
 // Data for the carousel items
 const galleryItems = [

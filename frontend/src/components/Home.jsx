@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { Star, MapPin, Users, Calendar, ChevronLeft, ChevronRight, Bell } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import LatestGalleryHighlights from './LatestGalleryHighlights';
+import LatestGalleryHighlights from '../pages/LatestGalleryHighlights';
 import banner1 from "../assets/banner1.jpg";
 import banner2 from "../assets/banner2.jpg";
 import banner5 from "../assets/banner5.jpg";
 import heroVideo from "../assets/heroVideo.mp4";
 import banner3 from "../assets/banner3.jpg";
 import banner4 from "../assets/banner4.jpg";
-import LatestUpdates from "./LatestUpdates";
+import LatestUpdates from "../pages/LatestUpdates";
 import { websiteData } from '../data/CategoryData';
 import jharkhandHero from '../assets/jharkhand-hero.jpg';
-import TrendingSection from "./TrendingSection";
-import PhotoVideoGallery from './PhotoVideoGallery';
-import PrideOfJharkhand from "./PrideOfJharkhand";
-import TouristTestimonials from "./TouristTestimonials";
+import TrendingSection from "../pages/TrendingSection";
+import PhotoVideoGallery from '../components/PhotoVideoGallery';
+import PrideOfJharkhand from "../pages/PrideOfJharkhand";
+import TouristTestimonials from "../pages/TouristTestimonials";
 
 const CategoryCard = ({ category, index }) => (
   <Link
