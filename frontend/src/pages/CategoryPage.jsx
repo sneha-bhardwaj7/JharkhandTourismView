@@ -13,7 +13,6 @@ const ImageModal = ({ image, onClose, accentColor }) => (
       >
         <X className="w-6 h-6" />
       </button>
-      
       <div className="relative">
         <img
           src={image.src}
