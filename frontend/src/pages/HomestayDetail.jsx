@@ -18,7 +18,63 @@ import {
   Users,
   ChevronDown
 } from 'lucide-react';
-import { getHomestayById } from '../data/homestayData';
+
+// Import the destinations data from Homestay.jsx
+import { destinationsData } from '../components/Homestay';
+
+// Create homestay data based on destinations data
+const createHomestayFromDestination = (destination) => {
+  return {
+    id: destination.id,
+    name: `${destination.name} Heritage Homestay`,
+    location: destination.address.location,
+    shortLocation: destination.name,
+    rating: destination.rating,
+    amenities: ["+8"],
+    originalPrice: Math.floor(destination.rating * 800) + 500,
+    discountedPrice: Math.floor((destination.rating * 800 + 500) * 0.8),
+    discount: "20% Off",
+    images: destination.gallery || [destination.heroImage, destination.thumbnailImage],
+    thumbnailImage: destination.thumbnailImage,
+    description: destination.description,
+    rooms: [
+      {
+        id: 1,
+        type: "Deluxe Room",
+        capacity: "2 x Adult | 1 x Room",
+        price: Math.floor((destination.rating * 800 + 500) * 0.8),
+        originalPrice: Math.floor(destination.rating * 800) + 500,
+        amenities: ["AC", "WiFi", "TV", "Bathroom"],
+        description: `Comfortable room with modern amenities and beautiful views of ${destination.name}`
+      },
+      {
+        id: 2,
+        type: "Super Deluxe Room",
+        capacity: "2 x Adult | 1 x Room",
+        price: Math.floor((destination.rating * 800 + 800) * 0.8),
+        originalPrice: Math.floor(destination.rating * 800) + 800,
+        amenities: ["AC", "WiFi", "TV", "Bathroom", "Balcony"],
+        description: `Spacious room with premium amenities and panoramic views of ${destination.name}`
+      }
+    ],
+    checkIn: "2:00 PM",
+    checkOut: "11:00 AM",
+    policies: [
+      "Food is allowed at an extra cost",
+      "Child under the age of 12 stays free if sharing the bed with parents",
+      "Extra mattress fee applies if required",
+      "Cancellation allowed 48 hours before check-in"
+    ],
+    facilities: ["Free WiFi", "Parking", "24/7 Security", "Restaurant", "Garden", "Local Guide"],
+    nearbyAttractions: destination.placesToVisit?.slice(0, 4) || [`${destination.name} City Center`, "Local Markets", "Cultural Sites"]
+  };
+};
+
+const getHomestayById = (id) => {
+  const destination = destinationsData[id];
+  if (!destination) return null;
+  return createHomestayFromDestination(destination);
+};
 
 const HomestayDetail = () => {
   const { homestayId } = useParams();
@@ -138,7 +194,7 @@ const HomestayDetail = () => {
               <div className="flex items-start justify-between mb-4">
                 <div>
                   <h1 className="text-2xl font-bold text-gray-800 mb-2">{homestay.name}</h1>
-                  <p className="text-sm text-gray-600">{homestay.rooms.length} {homestay.rooms[0]?.type} | {homestay.rooms[0]?.amenities.length} Common Bathroom</p>
+                  <p className="text-sm text-gray-600">{homestay.rooms.length} Room Types | Multiple Amenities</p>
                 </div>
                 <div className="flex items-center bg-green-100 px-3 py-1 rounded-lg">
                   <Star className="w-4 h-4 text-yellow-400 fill-current mr-1" />

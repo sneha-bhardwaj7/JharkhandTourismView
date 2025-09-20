@@ -8,7 +8,7 @@ import DestinationPage from './pages/DestinationPage';
 import ExplorePage from './components/ExplorePage';
 import Marketplace from './components/Marketplace';
 import Gallery from './pages/JharkhandGallery';
-import Homestay from './components/Homestay';
+import Homestay from './components/Homestay.jsx';
 import HomestayDetail from './pages/HomestayDetail';
 import Apply from './components/Apply';
 import './App.css';
